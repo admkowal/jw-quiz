@@ -1,0 +1,19 @@
+{
+  "name": "jw-quiz",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admkowal/jw-quiz.git"
+  },
+  "author": "Adam Kowal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/admkowal/jw-quiz/issues"
+  },
+  "homepage": "https://github.com/admkowal/jw-quiz#readme"
+}
