@@ -7,14 +7,11 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 import './css/index.scss';
 import App from './app/app';
-import { MUI_THEME } from './const';
 import rootSaga from './store/sagas';
 import configureStore from './store/configure-store';
 import setupAxiosInterceptors from './utils/axios-interceptor';
 
 window.React = React;
-const materialTheme = createMuiTheme(MUI_THEME);
-
 export const history = createBrowserHistory();
 
 const store = configureStore();
@@ -24,7 +21,8 @@ setupAxiosInterceptors();
 function render() {
   ReactDOM.render((
     <Provider store={store}>
-      <MuiThemeProvider theme={materialTheme}>
+      <MuiThemeProvider theme={createMuiTheme({
+        typography: {useNextVariants: true}})}>
         <Router history={history}>
           <App />
         </Router>
