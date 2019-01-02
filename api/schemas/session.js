@@ -32,8 +32,7 @@ const schema = new mongoose.Schema({
     }]
   }]
 });
-const SESSION = mongoose.model("SESSION", schema);
 
 module.exports = {
-  SESSION: SESSION,
+  sessionSchema: schema
 };

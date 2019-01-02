@@ -1,8 +1,8 @@
-const SESSION = require("../schemas/session").SESSION;
+const Session = require("../models/session").Session;
 
 function createSession(data, res) {
-  const newSESSION = new SESSION({name: data.name});
-  newSESSION.save(function(err, session) {
+  const newSession = new Session({name: data.name});
+  newSession.save(function(err, session) {
     res.send(session);
   });
 }

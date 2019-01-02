@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import sessions from '../session/list/reducers';
+
 const reducers = combineReducers({
-  app: () => ({ app: null })
+  sessions
 });
 
 export default reducers;

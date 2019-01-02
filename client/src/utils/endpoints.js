@@ -1,5 +1,6 @@
 export const URLS = {
-  CREATE_SESSION: '/api/session'
+  CREATE_SESSION: '/api/session',
+  GET_SESSIONS: '/api/get-sessions'
 };
 
 export const STATUS_CODES = {

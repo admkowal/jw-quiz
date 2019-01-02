@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router';
 
 import { NAV_URLS } from '../utils/navigation-service';
 
+import SessionList from '../session/list/list';
 import Session from '../session/session';
 import App from '../app/app';
 
@@ -11,7 +12,8 @@ export default class Routes extends Component {
     return (
       <Switch>
         <Route exact path={NAV_URLS.HOME} component={App} />
-        <Route path={`${NAV_URLS.SESSION}/:id`} component={Session} />
+        <Route exact path={NAV_URLS.SESSION} component={SessionList} />
+        <Route exact path={`${NAV_URLS.SESSION}/:id`} component={Session} />
       </Switch>
     );
   }
