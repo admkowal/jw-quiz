@@ -3,10 +3,10 @@
 A quiz app for learning and entertainment with the objective to learn Bible principles.
 
 ## Tasks for 1.0.0
-1. As an admin I want to be able to create a session with a name
+DONE 1. As an admin I want to be able to create a session with a name
   - FE Create admin panel with form - Create session moves to /admin/session/:id
   - BE expose api/session POST (database: sessions) (shema: {id, name})
-2. As a user I want to choose a session. (If there is only one I should join automatically)
+DONE 2. As a user I want to choose a session. (If there is only one I should join automatically)
   - FE create a list of tiles with open sessions on /session route. Click moves user to /session/:id. Id is a number. (For start / route should redirect to /session)
   - FE /session/:id should connect to socket
   - BE expose api/sessions GET to fetch the sessions on /session route
