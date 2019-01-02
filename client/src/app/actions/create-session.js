@@ -20,7 +20,7 @@ export function* createSession({data}) {
     failMsg: 'Sorry, creation of the session failed'
   });
 
-  if (response.status === STATUS_CODES.CREATED) {
+  if (response.status === STATUS_CODES.SUCCESS) {
     history.push(getSessionUrl(response.data.id));
   }
 }

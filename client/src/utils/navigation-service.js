@@ -3,4 +3,4 @@ export const NAV_URLS = {
   SESSION: '/session'
 };
 
-export const getSessionUrl = id => `${NAV_URLS.SESSION}${id}`;
+export const getSessionUrl = id => `${NAV_URLS.SESSION}/${id}`;
