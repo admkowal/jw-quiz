@@ -1,6 +1,6 @@
 export const NAV_URLS = {
-  ADMIN_PANEL: '/admin',
-  SESSSION_ADMIN: '/admin/session'
+  HOME: '/',
+  SESSION: '/session'
 };
 
-export const getAdminSessionUrl = id => `${NAV_URLS.SESSSION_ADMIN}${id}`;
+export const getSessionUrl = id => `${NAV_URLS.SESSION}${id}`;

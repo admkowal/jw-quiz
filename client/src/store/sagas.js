@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
 
-import watchRequestCreateSession from '../admin/create-session/actions';
+import watchRequestCreateSession from '../app/actions/create-session';
 
 export default function* rootSaga() {
   try {
