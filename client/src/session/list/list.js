@@ -19,7 +19,7 @@ class SessionList extends React.Component {
     return (
       <main className="session-list">
         {list.map(session => (
-          <Card>
+          <Card key={session.id}>
             <CardContent>
               <Typography variant="h5" component="h2">
                 {session.name}

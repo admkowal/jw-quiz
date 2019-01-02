@@ -1,13 +1,13 @@
 import { all } from 'redux-saga/effects';
 
-import watchRequestCreateSession from '../app/actions/create-session';
-import watchRequestGetSessions from '../session/list/actions';
+import createSession from '../app/actions/create-session';
+import sessions from '../session/list/actions';
 
 export default function* rootSaga() {
   try {
     yield all([
-      watchRequestCreateSession,
-      watchRequestGetSessions
+      createSession,
+      sessions
     ])
   } catch (e) {
     console.warn('Saga error:', e);

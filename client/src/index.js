@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import io from 'socket.io-client';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
@@ -9,14 +10,18 @@ import './css/index.scss';
 import Routes from './routing/routes';
 import rootSaga from './store/sagas';
 import configureStore from './store/configure-store';
+import setSocketListeners from './utils/socket-listeners';
 import setupAxiosInterceptors from './utils/axios-interceptor';
 
 window.React = React;
 export const history = createBrowserHistory();
 
-const store = configureStore();
+export const socket = io('http://localhost:8000/');
+export const store = configureStore();
 store.runSaga(rootSaga);
 setupAxiosInterceptors();
+
+setSocketListeners();
 
 function render() {
   ReactDOM.render((

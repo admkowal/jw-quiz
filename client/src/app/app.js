@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
-import { NAV_URLS } from '../utils/navigation-service';
-import ErrorBoundary from '../common/error-boundary';
 import NavBtn from '../common/buttons/nav-btn';
+import ErrorBoundary from '../common/error-boundary';
 import FormDialog from '../common/dialog/form-dialog';
+import { NAV_URLS } from '../utils/navigation-service';
 
 import { requestCreateSession } from './actions/create-session';
 
