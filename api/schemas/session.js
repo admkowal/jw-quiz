@@ -27,7 +27,7 @@ const schema = new mongoose.Schema({
         type: String,
         default: shortid.generate
       },
-      correct: Boolean,
+      isCorrect: Boolean,
       voteNumber: Number
     }]
   }]

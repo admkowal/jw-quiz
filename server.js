@@ -18,6 +18,10 @@ app.get('/api/get-sessions', function(req, res) {
   api.getSessions(res);
 })
 
+app.get('/api/get-session', function(req, res) {
+  api.getSession(req.query, res);
+})
+
 app.listen(API_PORT, function() {
   console.log("Serwer został uruchomiony pod adresem http://localhost:" + API_PORT);
 });

@@ -17,9 +17,10 @@ function App({requestCreateSession}) {
         <FormDialog
           onSubmit={requestCreateSession}
           title="Create session"
-          desc="Type name to create session"
-          label="Name"
-          name="name">
+          fields={[
+            {label: 'Name', name: 'name'},
+            {label: 'Username', name: 'username'}
+          ]}>
           <Button
             variant="contained"
             color="primary">

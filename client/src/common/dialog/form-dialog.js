@@ -33,7 +33,7 @@ export default class FormDialog extends Component {
   }
 
   render() {
-    const { title = '', children, desc = '', cancelText = 'Cancel', label = '', name = '', submitText = 'Submit' } = this.props;
+    const { title = '', children, desc = '', cancelText = 'Cancel', fields = [], submitText = 'Submit' } = this.props;
     return (
       <div className="common-form-dialog">
         {cloneElement(children, {onClick: this.handleClickOpen})}
@@ -50,11 +50,13 @@ export default class FormDialog extends Component {
             onSubmit={this.handleConfirm}
             render={({handleSubmit, pristine, invalid}) => (
               <form onSubmit={handleSubmit}>
-                <Field
-                  name={name}
-                  label={label}
-                  autoFocus={true}
-                  component={TextField} />
+                {fields.map(field => (
+                  <Field
+                    key={field.name}
+                    name={field.name}
+                    label={field.label}
+                    component={TextField} />
+                ))}
                 <Button onClick={this.handleClose} color="primary">
                   {cancelText}
                 </Button>

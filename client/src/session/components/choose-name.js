@@ -13,8 +13,9 @@ function ChooseName({player, sessionId}) {
     <FormDialog
       onSubmit={data => addPlayer({params: data, sessionId})}
       title="Choose your nickname"
-      label="Name"
-      name="name">
+      fields={[
+        {label: 'Name', name: 'name'}
+      ]}>
       <Button
         variant="contained"
         color="primary">

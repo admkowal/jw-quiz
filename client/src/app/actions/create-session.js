@@ -1,4 +1,4 @@
-import { call } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 
 import { history } from '../../index';
 import { request, POST } from '../../utils/http';
@@ -6,6 +6,8 @@ import { takeLatest } from '../../utils/redux-saga';
 import { STATUS_CODES, URLS } from '../../utils/endpoints';
 import { getSessionUrl } from '../../utils/navigation-service';
 import { createSagaActionTypes } from '../../utils/action-factory';
+
+import { setSession } from '../../session/reducers';
 
 export const REQUEST_CREATE_SESSION = 'REQUEST_CREATE_SESSION';
 export const actions = createSagaActionTypes('ADMIN_SESSION', [REQUEST_CREATE_SESSION]);
@@ -21,6 +23,7 @@ export function* createSession({data}) {
   });
 
   if (response.status === STATUS_CODES.SUCCESS) {
+    yield put(setSession({...response.data, player: response.data.players[0]}));
     history.push(getSessionUrl(response.data.id));
   }
 }
