@@ -23,7 +23,7 @@ function Question({sessionId, question, setMyAnswer, player, players}) {
     <section className="s-question">
       <h1>{question.question}</h1>
       {question.answers.map(answer => (
-        <Card key={answer.id} className={`${answer.isVoted ? 'voted' : ''}${shouldShowAnswer && answer.isCorrect ? 'answer' : ''}`}>
+        <Card key={answer.id} className={`${answer.isVoted ? 'voted' : ''} ${shouldShowAnswer && answer.isCorrect ? 'answer' : ''}`}>
           <CardActionArea onClick={() => {
             if (!haveVoted) {
               emitAnswer({sessionId, questionId: question.id, answerId: answer.id});
