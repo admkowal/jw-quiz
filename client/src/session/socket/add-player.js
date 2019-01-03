@@ -1,6 +1,9 @@
 import { socket, store } from '../../index';
 
-import { setPlayer, setAddPlayer } from '../reducers';
+import {
+  setPlayer,
+  setAddPlayer
+} from '../reducers';
 
 export function addPlayer({params, sessionId}) {
   socket.emit('addPlayer', {

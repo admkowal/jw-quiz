@@ -12,3 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.s-question {
+  .voted { background-color: red; }
+  .answer { background-color: green; }
+}
