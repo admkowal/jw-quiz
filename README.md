@@ -4,23 +4,17 @@ A quiz app for learning and entertainment with the objective to learn Bible prin
 
 ## Tasks for 1.0.0
 1. DONE As an admin I want to be able to create a session with a name
-  - FE Create admin panel with form - Create session moves to /admin/session/:id
-  - BE expose api/session POST (database: sessions) (shema: {id, name})
-2. DONE As a user I want to choose a session. (If there is only one I should join automatically)
-  - FE create a list of tiles with open sessions on /session route. Click moves user to /session/:id. Id is a number. (For start / route should redirect to /session)
-  - FE /session/:id should connect to socket
-  - BE expose api/sessions GET to fetch the sessions on /session route
-3. As a user I want to choose a username to start playing
-  - FE create a form to specify username for a player on first seen view on /session/:id
-  - BE socket.on 'add player' - save to DB and emit 'new player'
-4. As an admin I want to be able within the session view to generate new question from database (Seen least recently should be choosen)
-  - FE - Generate question button on /admin/session/:id socket.emit 'generate question'
-  - BE - socket.on 'generate question' (should get question from database, save it to session and then emit the question to client) and socket.emit 'new question'
-5. As a user I want to choose an answer (4 possible)
-  - FE - interface for question and for answers. socket.on 'new question' - display new question and answers, socket.emit 'answer' on answer
-  - BE socket.on 'answer'. Should check if all players answered. If yes then socket.emit 'question end'
-6. As a user and as an admin I want to see which answer was choosed by majority and if it was correct one (If not - correct one should not be highlighted)
-  - FE socket.on 'question end' displayed choosed answer and higlight on red or green to indicate if the answer was correct
+2. DONE As a user I want to choose a session.
+3. DONE As a user I want to choose a username to start playing
+4. DONE As an admin I want to be able within the session view to generate new question from database (Seen least recently should be choosen)
+5. DONE As a user I want to choose an answer (4 possible)
+6. DONE As a user and as an admin I want to see which answer was choosed by majority and if it was correct one (If not - correct one should be highlighted)
+
+### Tasks for 1.1.0
+1. Style application
+2. As an admin I want to add question
+3. As an admin I want to edit a question
+4. As a team I want to see score
 
 ## Tasks for 1.5.0
 1. As a user I want be able to specify my native language (PL, BG)

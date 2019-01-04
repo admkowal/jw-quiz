@@ -8,7 +8,6 @@ function addPlayer(data, io, client) {
     ];
   
     session.save(function(err, session) {
-      console.log(session);
       const newPlayer = session.players[0];
       io.emit('playerAdded', newPlayer);
       client.emit('newPlayer', newPlayer);
