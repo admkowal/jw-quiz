@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://admin:5M6LqazZxc*@ds013559.mlab.com:13559/jw-quiz", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://admin:5M6LqazZxc*@ds013559.mlab.com:13559/jw-quiz", {
   useNewUrlParser: true
 });
 
