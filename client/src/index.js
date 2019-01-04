@@ -16,7 +16,7 @@ import setupAxiosInterceptors from './utils/axios-interceptor';
 window.React = React;
 export const history = createBrowserHistory();
 
-export const socket = io('http://localhost:8000/');
+export const socket = io();
 export const store = configureStore();
 store.runSaga(rootSaga);
 setupAxiosInterceptors();
