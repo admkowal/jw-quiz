@@ -13,10 +13,10 @@ function App({requestCreateSession}) {
   return (
     <ErrorBoundary>
       <div className="app">
-        <NavBtn to={NAV_URLS.SESSION} label="Join session" />
+        <NavBtn to={NAV_URLS.SESSION} label="Dołącz do sesji" />
         <FormDialog
           onSubmit={requestCreateSession}
-          title="Create session"
+          title="Stwórz sesję"
           fields={[
             {label: 'Name', name: 'name'},
             {label: 'Username', name: 'username'}
@@ -24,7 +24,7 @@ function App({requestCreateSession}) {
           <Button
             variant="contained"
             color="primary">
-            Create session
+            Stwórz sesję
           </Button>
         </FormDialog>
       </div>

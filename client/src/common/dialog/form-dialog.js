@@ -33,11 +33,12 @@ export default class FormDialog extends Component {
   }
 
   render() {
-    const { title = '', children, desc = '', cancelText = 'Cancel', fields = [], submitText = 'Submit' } = this.props;
+    const { title = '', children, desc = '', fields = [], submitText = 'Submit' } = this.props;
     return (
       <div className="common-form-dialog">
         {cloneElement(children, {onClick: this.handleClickOpen})}
         <Dialog
+          className="cf-dialog"
           open={this.state.open}
           onClose={this.handleClose}>
           <DialogTitle className="cac-title">{title}</DialogTitle>
@@ -57,9 +58,6 @@ export default class FormDialog extends Component {
                     label={field.label}
                     component={TextField} />
                 ))}
-                <Button onClick={this.handleClose} color="primary">
-                  {cancelText}
-                </Button>
                 <Button type="submit" disabled={pristine || invalid} color="primary">
                   {submitText}
                 </Button>
