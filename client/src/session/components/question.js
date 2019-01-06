@@ -16,7 +16,7 @@ function Question({sessionId, question, setMyAnswer, player, players}) {
   }
   const haveVoted = question.answers.map(answer => answer.isVoted).includes(true);
   const playersCount = players.length;
-  const playersVoted = question.answers.map(answer => answer.voteNumber).reduce((sum, val) => sum + val, 0);
+  const playersVoted = question.answers.map(answer => answer.voteCount).reduce((sum, val) => sum + val, 0);
   const shouldShowAnswer = playersCount === playersVoted;
 
   return (
@@ -34,7 +34,7 @@ function Question({sessionId, question, setMyAnswer, player, players}) {
                 {answer.answer}
               </Typography>
               <Typography>
-                {answer.voteNumber}
+                {answer.voteCount}
               </Typography>
             </CardContent>
           </CardActionArea>

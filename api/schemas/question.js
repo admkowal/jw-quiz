@@ -14,8 +14,9 @@ const schema = new mongoose.Schema({
       default: shortid.generate
     },
     isCorrect: Boolean,
-    voteNumber: Number
-  }]
+    voteCount: Number
+  }],
+  source: String
 });
 
 module.exports = {

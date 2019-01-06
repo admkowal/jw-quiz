@@ -1,7 +1,10 @@
 require("./mongoose");
 
 module.exports = {
-  createSession: require("./actions/create-session").createSession,
-  getSessions: require("./actions/get-sessions").getSessions,
   getSession: require("./actions/get-session").getSession,
+  getSessions: require("./actions/get-sessions").getSessions,
+  getQuestion: require("./actions/get-question").getQuestion,
+  editQuestion: require("./actions/edit-question").editQuestion,
+  createSession: require("./actions/create-session").createSession,
+  createQuestion: require("./actions/create-question").createQuestion
 };
