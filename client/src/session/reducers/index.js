@@ -58,7 +58,7 @@ export default function session(state = {
                 if (answer.id === action.answerId) {
                   return {
                     ...answer,
-                    voteNumber: answer.voteNumber + 1
+                    voteCount: answer.voteCount + 1
                   };
                 }
                 return answer;

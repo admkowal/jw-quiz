@@ -8,7 +8,7 @@ function addAnswer(data, io, client) {
           ...question,
           answers: question.answers.map(function(answer) {
             if (answer.id === data.answerId) {
-              answer.voteNumber = answer.voteNumber + 1
+              answer.voteCount = answer.voteCount + 1
               return answer;
             }
             return answer;

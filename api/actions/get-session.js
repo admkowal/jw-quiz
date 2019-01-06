@@ -1,11 +1,11 @@
-const Question = require("../models/question").Question;
+const Session = require("../models/session").Session;
 
-function getQuestion(data, res) {
-  Question.findOne({id: data.id}, function(err, question) {
-    res.send(question);
+function getSession(data, res) {
+  Session.findOne({id: data.id}, function(err, session) {
+    res.send(session);
   });
 }
 
 module.exports = {
-  getQuestion
+  getSession
 };

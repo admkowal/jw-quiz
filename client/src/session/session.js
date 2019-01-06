@@ -19,10 +19,15 @@ class Session extends React.Component {
   render() {
     const { match, session } = this.props;
     const sessionId = match.params.id;
+    const points = session.questions.reduce((sum, question) => {
+      const correctAnswer = question.answers.find(answer => answer.isCorrect);
+      const answerPoints = Number(correctAnswer.voteCount) * 100;
+      return sum + answerPoints;
+    }, 0)
 
     return (
       <main className="session">
-        <h2>{`Session ${session.name}`}</h2>
+        <h2>{`Session ${session.name}. Points earned: ${points}`}</h2>
         <ChooseName sessionId={sessionId}/>
         <GenerateQuestion/>
         <Question/>

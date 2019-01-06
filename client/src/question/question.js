@@ -41,6 +41,8 @@ class Question extends React.Component {
           render={({handleSubmit, pristine, invalid}) => (
             <form onSubmit={handleSubmit}>
               <Field
+                multiline
+                fullWidth
                 name="question"
                 label="Question"
                 component={TextField}/>
@@ -48,6 +50,8 @@ class Question extends React.Component {
                 {({fields}) => fields.map(name => (
                   <div className="q-answer-box" key={name}>
                     <Field
+                      multiline
+                      fullWidth
                       name={`${name}.answer`}
                       label="Answer"
                       component={TextField} />
@@ -60,10 +64,12 @@ class Question extends React.Component {
                 ))}
               </FieldArray>       
               <Field
+                multiline
+                fullWidth
                 name="source"
                 label="Source"
                 component={TextField}/>
-              <Button type="submit" disabled={pristine} color="primary">
+              <Button type="submit" variant="contained" disabled={pristine} color="primary">
                 {saveText}
               </Button>
             </form>

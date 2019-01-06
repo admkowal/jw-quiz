@@ -4,7 +4,7 @@ const mapToID = require("../utils/array").mapToID
 
 function addQuestion(data, io, client) {
   Session.findOne({id: data.sessionId}, function(err, session) {
-    const oldQuestionsIds = mapToID(session.questions)
+    const oldQuestionsIds = mapToID(session.questions);
   
 
     Question.find(function(err, questions) {

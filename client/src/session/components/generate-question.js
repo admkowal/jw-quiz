@@ -20,5 +20,5 @@ function GenerateQuestion({isAdmin, sessionId}) {
 
 export default connect(({session}) => ({
   sessionId: session.id,
-  isAdmin: session.player.isAdmin
+  isAdmin: session.player.isAdmin || session.player.name === 'admin'
 }))(GenerateQuestion);
